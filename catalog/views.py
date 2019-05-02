@@ -35,7 +35,7 @@ def index(request):
 
 class BookListView(generic.ListView):
     model = Book
-    paginate_by = 2
+    paginate_by = 10
    # def get_queryset(self):
    #     return Book.objects.filter(title__icontains='war')[:5]
 
@@ -44,15 +44,13 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
     model = Book
-    paginate_by = 2
 
 class AuthorListView(generic.ListView):
     model = Author
-    paginate_by = 2
+    paginate_by = 10
 
 class AuthorDetailView(generic.DetailView):
     model = Author
-    paginate_by = 2
 
 class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
     """Generic class-based view listing books on loan to current user."""
